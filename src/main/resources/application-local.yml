@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:h2:mem:test
+    properties:
+      rewriteBatchedStatements: true
+  logging:
+    path: ./log/
+    level:
+      root: TRACE  # 전체 애플리케이션에 대한 로깅 레벨 설정
+      org.springframework: TRACE  # Spring 프레임워크 관련 로깅 레벨 설정
+      org.hibernate: TRACE  # Hibernate 관련 로깅 레벨 설정
+      org.springframework.security: TRACE
+      org.springframework.security.oauth2.client: TRACE
